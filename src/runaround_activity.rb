@@ -1,6 +1,8 @@
 require 'ruboto/widget'
 require 'ruboto/util/toast'
 
+require_relative 'gamecore'
+
 ruboto_import_widgets :Button, :LinearLayout, :TextView
 
 # http://xkcd.com/378/
