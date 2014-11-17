@@ -14,10 +14,17 @@ class RunaroundActivity
     set_title 'runaround'
     runaround = Runaround.new(UiFactory.new(self))
 
+    puts 'XXXXXXXXXXXXXCREATE'
+
     setContentView(runaround.scene)
 
     Thread.new do
-      runaround.run
+      begin
+        runaround.run
+      rescue Exception
+        puts "Exception running game: #{$!}"
+        puts $!.backtrace.join("\n")
+      end
     end
   rescue Exception
     puts "Exception creating activity: #{$!}"
